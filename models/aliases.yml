@@ -4,9 +4,8 @@ version: 2
 models:
   - name: aliases
     tests:
-      - none_null:
-          except_columns: [primaryNames]
-          force_table_scan: True
+      - fully_queryable:
+          nullable_columns: [primaryNames]
 
     columns:
       - name: nconst

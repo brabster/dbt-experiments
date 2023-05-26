@@ -4,7 +4,8 @@ version: 2
 models:
   - name: unique_names
     tests:
-      - none_null
+      - fully_queryable:
+          nullable_columns: []
     columns:
       - name: primaryName
         tests:

@@ -1,0 +1,9 @@
+version: 2
+
+macros:
+  - name: fully_queryable
+    description: performs a full table scan, ensuring every column can be queried. Can detect issues in external tables like bad parquet files. Includes null checking functionality to make better use of the scan.
+    arguments:
+      - name: nullable_columns
+        description: Columns that may be null. Accepts 'all' (default), or a list of column names, If a list, the remaining columns are required to be non-null. Empty list requires all columns non-null.
+     
