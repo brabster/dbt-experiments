@@ -1,0 +1,23 @@
+
+version: 2
+
+models:
+  - name: names
+    tests:
+      - dbt_utils.expression_is_true:
+          expression: "array_length(primaryProfessions) > 0"
+    columns:
+      - name: nconst
+        tests:
+          - not_null
+      - name: birthYear
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: "date_part('year', current_date)"
+      - name: deathYear
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: "date_part('year', current_date)"
+        

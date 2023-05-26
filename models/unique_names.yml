@@ -1,0 +1,17 @@
+
+version: 2
+
+models:
+  - name: unique_names
+    tests:
+      - none_null
+    columns:
+      - name: primaryName
+        tests:
+          - unique
+          - not_null
+      - name: count
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+      

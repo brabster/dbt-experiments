@@ -1,0 +1,6 @@
+dbt_experiments:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: uncommitted/imdb.duckdb

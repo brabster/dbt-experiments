@@ -1,0 +1,1 @@
+Can we derive an ERD diagram from a dbt project?
